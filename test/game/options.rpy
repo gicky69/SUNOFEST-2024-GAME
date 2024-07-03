@@ -12,8 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("test")
-
+define config.name = _("hehe")
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -23,7 +22,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "69.420"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -37,7 +36,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "test"
+define build.name = "asdf"
 
 
 ## Sounds and music ############################################################
@@ -121,6 +120,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## number is the number of characters per second to type out.
 
 default preferences.text_cps = 0
+default preferences.fullscreen = True
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -143,7 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "test-1719559647"
+define config.save_directory = "asdf-1719808543"
 
 
 ## Icon ########################################################################

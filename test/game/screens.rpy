@@ -290,14 +290,16 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
+        # xalign 0.5
+        yalign 0.8
+ 
+        # spacing gui.navigation_spacing
+    
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Staart") action Start()
+
+            # imagebutton idle Image("button_idle.png") hover "button_hover.png" action Start()
 
         else:
 
@@ -368,7 +370,7 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
+            text "ya":
                 style "main_menu_title"
 
             text "[config.version]":

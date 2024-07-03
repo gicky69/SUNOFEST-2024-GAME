@@ -1,46 +1,59 @@
-﻿# The script of the game goes in this file.
+﻿
+define a = Character("Neco Arc")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+transform flip(x):
+    xzoom x
 
-define e = Character("Eileen")
-
-
-# The game starts here.
+transform fill_screen:
+    xanchor 0.5
+    yanchor 0.5
+    xpos 0.5
+    ypos 0.5
+    xzoom 10
+    yzoom 10
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene rizal park at fill_screen
 
-    scene bg room
+    $ flag = True
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    $ count = 1
 
-    show eileen happy
+    $ thingamajig = 10
 
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    jump asdf
-
-    # This ends the game.
+    jump start2
 
     return
 
-define count = 1
+label start2:
 
-label asdf:
-    $ repeated_string = "NIGGER " * count
+    if flag:
+        if (renpy.random.randint(0, 2) == 1): 
+            show neco arc at topleft
+        else: 
+            show neco arc at left
+        show neco arc at flip(1)
+    else:
+        if (renpy.random.randint(0, 2) == 1): 
+            show neco arc at topright
+        else: 
+            show neco arc at right
+        show neco arc at flip(-1)
 
-    e "[repeated_string]"
+    with move
+    with vpunch
+    
+    $ flag = not flag
 
-    $ count += 1
+    $ say = "BURUNYUU " * count
 
-    jump asdf
+    a "[say]"
+
+    if count > thingamajig:
+        $ count = 1
+        $ thingamajig = renpy.random.randint(5, 15)
+    else:
+        $ count += 1
+
+    jump start2
